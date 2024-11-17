@@ -7,18 +7,31 @@ Para clonar este repositório, use o seguinte comando:
 `
 Estrutura do projeto:
 APIRESTFUL
+ 
  ┣ FASTAPIdoc
+ 
  ┃ ┣ productDOC.py
+ 
  ┃ ┣ userDOC.py
+ 
  ┣ models
+ 
  ┃ ┣ products.py
+ 
  ┃ ┣ users.py
+ 
  ┣ routes
+ 
  ┃ ┣ produtos.py
+ 
  ┃ ┣ users.py
+ 
  ┣ serializer
+ 
  ┃ ┣ product.py
+ 
  ┣ database.py
+ 
  ┣ main.py
 
 Abra um novo terminal do Visual Studio Code na pasta principal do projeto ('APIRESTful'), e crie uma máquina virtual (.venv). O módulo venv já vem instalado a partir do Python 3.3.
