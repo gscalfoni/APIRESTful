@@ -6,6 +6,7 @@ Para clonar este repositório, use o seguinte comando:
 `git clone hhttps://github.com/gscalfoni/APIRESTful.git
 `
 Estrutura do projeto:
+`
 APIRESTFUL
  
  ┣ FASTAPIdoc
@@ -33,7 +34,7 @@ APIRESTFUL
  ┣ database.py
  
  ┣ main.py
-
+`
 Abra um novo terminal do Visual Studio Code na pasta principal do projeto ('APIRESTful'), e crie uma máquina virtual (.venv). O módulo venv já vem instalado a partir do Python 3.3.
 
 Crie a venv com `python -m venv venv`. Para ativar o ambiente virtual:
