@@ -29,9 +29,9 @@ Vá para o link gerado ou para o link da documentação da API(http://127.0.0.1:
 Os endpoints disponíveis são:
 
 Produtos 
--   GET /produtos - Listar todos os produtos.
 -   GET /produtos/preco - Lista os produtos entre os preços mínimo e máximo
 -   GET /produtos/qtd - Lista os produtos entre com a quantidade entre o valor mínimo (default = -1) e máximo
+-   GET /produtos - Listar todos os produtos.
 -   POST /produtos - Criar um novo produto.
 -   GET /produtos/{id} - Listar um produto.
 -   PUT /produtos/{id} - Atualizar um produto.
