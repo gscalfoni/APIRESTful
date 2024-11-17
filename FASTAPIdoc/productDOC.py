@@ -165,6 +165,18 @@ response_filter = {
                 },
             },
     },
+    400:{
+        "description": "Error: Bad Request",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "Erro": "O mínimo deve ser menor que o máximo",
+                        "Código de Erro": 400
+                        }
+                    },
+            },
+        
+    },
     422:{
         "description": "Error: Unprocessable Entity",
             "content": {
@@ -176,5 +188,5 @@ response_filter = {
                     },
             },
         
-    },
+    }
 }

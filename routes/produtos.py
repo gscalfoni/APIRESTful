@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status, Body
 from pymongo.collection import ReturnDocument
 from bson.objectid import ObjectId
-from typing import Annotated
+from typing import Annotated, Optional
 
 from database import collection
 from models.products import Product
@@ -13,6 +13,32 @@ router = APIRouter(
     tags=["Produtos"]
 )
 
+
+@router.get("/preco",
+            responses=response_filter,
+            status_code=status.HTTP_200_OK)
+async def filter_by_price(min : float, max : float):
+    if min>max:
+        raise HTTPException (status_code=400, detail={"Erro": "O mínimo deve ser menor que o máximo", "Código de erro": 400})
+    list = listProducts(collection.find())
+    filteredList  = []
+    for produto in list:
+            if produto["preco"] >= min and produto["preco"] < max:
+                filteredList.append(produto)
+    return(filteredList)
+
+@router.get("/qtd",
+            responses=response_filter,
+            status_code=status.HTTP_200_OK)
+async def filter_by_qtd( max : int, min : Optional[int] = -1):
+    if min>max:
+        raise HTTPException (status_code=400, detail={"Erro": "O mínimo deve ser menor que o máximo", "Código de erro": 400})
+    list = listProducts(collection.find())
+    filteredList  = []
+    for produto in list:
+            if produto["quantidade"] > min and produto["quantidade"] <= max:
+                filteredList.append(produto)
+    return(filteredList)
 
 
 @router.get("", 
@@ -86,6 +112,4 @@ async def delete_One_Product(id: str):
 
     except Exception as e:
         raise HTTPException(status_code=404, detail={"Erro": "ID não encontrado", "Código de erro": 404})
-
-
-
+    
